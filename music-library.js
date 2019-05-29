@@ -55,7 +55,6 @@ var printTracks = function () {
         var trackName = library.tracks[track].name;
         var trackArtist = library.tracks[track].artist;
         var trackAlbum = library.tracks[track].album;
-
         console.log(`${trackID}: ${trackName} by ${trackArtist} (${trackAlbum})`);
     }
 }
@@ -91,28 +90,47 @@ printPlaylist('p02');
   // adds an existing track to an existing playlist
   // ex: add 't03' to 'p01'
 var addTrackToPlaylist = function (trackId, playlistId) {
-
+    console.log('   <----ADDING TRACK TO PLAYLIST---->')
+    library.playlists[playlistId].tracks.push(trackId)
 }
+addTrackToPlaylist('t03','p01');
+console.log(library.playlists.p01.tracks);
 
 
   // generates a unique id
   // (use this for addTrack and addPlaylist)
 
 var uid = function() {
-    return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+    return Math.floor((1 + Math.random()) * 0x100).toString(16).substring(1);
 }
+console.log(`t${uid()}`);
 
 
   // adds a track to the library
 var addTrack = function (name, artist, album) {
-}
+    var id = `t${uid()}`;
 
+    library.tracks[id] = {};
+    library.tracks[id].id = id;
+    library.tracks[id].name = name;
+    library.tracks[id].artist = artist;
+    library.tracks[id].album = album;
+}
+addTrack('Feels like Summer', 'Childish Gambino', 'Summer Pack')
+addTrack('Bohemian Rhapsody', 'Queen', 'A Night at the Opera')
+console.log(library.tracks);
 
   // adds a playlist to the library
-
 var addPlaylist = function (name) {
+    var id = `p${uid()}`;
 
+    library.playlists[id] = {};
+    library.playlists[id].id = id;
+    library.playlists[id].name = name;
+    library.playlists[id].tracks = [];
 }
+addPlaylist('Chill Music');
+console.log(library.playlists)
 
 
   // STRETCH:
