@@ -5,11 +5,14 @@
 function countPosition (phrase) {
     var charsObj = {};
     var letters = phrase.split('');
+
     for (var char = 0; char < letters.length; char++) {
         var charKey = letters[char];
+
         if (!charsObj[charKey]){
             charsObj[charKey] = [char];
         }
+
         else {
             charsObj[charKey].push(char)
         }

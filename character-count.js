@@ -15,7 +15,7 @@ function countLetters (phrase) {
     return charsObj;
 }
 
-console.log(countLetters("lighthouse in the house"));
+console.log(countLetters('lighthouse in the house'));
 
 /*{
     l: 1,
