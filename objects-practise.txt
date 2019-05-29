@@ -1,0 +1,172 @@
+mythilys-MacBook-Pro:week1 mythily$ node
+> typeof array
+'undefined'
+> typeof []
+'object'
+> typeof {}
+'object'
+> var myObject = {
+...   a: 6,     // Number
+...   b: "abc", // String
+...   c: true,  // Boolean
+...   d: null,
+... };
+undefined
+> var valueB = myObject['b']
+undefined
+> valueB
+'abc'
+> myObject.b
+'abc'
+> myobject[b]
+ReferenceError: myobject is not defined
+> myobject['b']
+ReferenceError: myobject is not defined
+> myObject.b
+'abc'
+> myObject['foo']
+undefined
+> myObject
+{ a: 6, b: 'abc', c: true, d: null }
+> myObject['foo'] = 'boo'
+'boo'
+> myObject
+{ a: 6, b: 'abc', c: true, d: null, foo: 'boo' }
+> var mary = { name: "Mary Sue" };
+undefined
+> mary["name"] = "Mary Jane";
+'Mary Jane'
+> mary["age"]  = 22;
+22
+> mary 
+{ name: 'Mary Jane', age: 22 }
+> ar myObject = {
+ar myObject = {
+   ^^^^^^^^
+
+SyntaxError: Unexpected identifier
+
+>   a: 6,     // Number
+...   b: "abc", // String
+  b: "abc", // String
+   ^
+
+SyntaxError: Unexpected token :
+
+>   c: true,  // Boolean
+...   d: null,
+  d: null,
+   ^
+
+SyntaxError: Unexpected token :
+
+>   d: null,.exit
+  d: null,.exit
+          ^
+
+SyntaxError: Unexpected token .
+
+> .exit
+mythilys-MacBook-Pro:week1 mythily$ node
+> clear
+ReferenceError: clear is not defined
+> var myObject = {
+...   a: 6,     // Number
+...   b: "abc", // String
+...   c: true,  // Boolean
+...   d: null,
+... };
+undefined
+> var valueB = myObject["b"];\
+var valueB = myObject["b"];\
+                           ^
+
+SyntaxError: Invalid or unexpected token
+
+> var valueB = myObject["b"];
+undefined
+> valueB
+'abc'
+> myObject.a
+6
+> myObject.c
+true
+> myObject['foo'];
+undefined
+> myObject
+{ a: 6, b: 'abc', c: true, d: null }
+> myObject['foo'] = 45
+45
+> myObject
+{ a: 6, b: 'abc', c: true, d: null, foo: 45 }
+> myObject
+{ a: 6, b: 'abc', c: true, d: null, foo: 45 }
+> var mary = { name:'Mary Sue'}
+undefined
+> mary.name
+'Mary Sue'
+> mary["name"] = "Mary Jane";
+'Mary Jane'
+> mary
+{ name: 'Mary Jane' }
+> mary['age'] = 22
+22
+> mary
+{ name: 'Mary Jane', age: 22 }
+> mary['age'] = 22
+22
+> var person = {
+...   name: "Paul",
+...   address: {
+.....     street: "310 W 95th",
+.....     city: "New York",
+.....     zipCode: 10027
+.....   }
+... };
+undefined
+> typeof person['address']
+'object'
+> person['address']['city'
+... ]
+'New York'
+> person.address
+{ street: '310 W 95th', city: 'New York', zipCode: 10027 }
+> person.address.city
+'New York'
+> person['address']['city']
+'New York'
+> typeof person.address
+'object'
+> person['phoneNumbers'] = [903432302, 09328420398]
+[ 903432302, 9328420398 ]
+> person
+{ name: 'Paul',
+  address: { street: '310 W 95th', city: 'New York', zipCode: 10027 },
+  phoneNumbers: [ 903432302, 9328420398 ] }
+> typeof person.phoneNumbers
+'object'
+> typeof []
+'object'
+> person["phoneNumbers"] instanceof Object
+true
+> person["phoneNumbers"] instanceof array
+ReferenceError: array is not defined
+> person["phoneNumbers"] instanceof String
+false
+> person["phoneNumbers"] instanceof Array
+true
+> person["phoneNumbers"][0] instanceof Number
+false
+> person["phoneNumbers"][0]
+903432302
+> person["phoneNumbers"][0] instanceof Number
+false
+> person["phoneNumbers"][0] instanceof number
+ReferenceError: number is not defined
+> typeof person["phoneNumbers"][0]
+'number'
+> person["phoneNumbers"][0] instanceof 'number'
+TypeError: Right-hand side of 'instanceof' is not an object
+> person["phoneNumbers"][0] instanceof Number
+false
+> 
