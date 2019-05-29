@@ -3,15 +3,16 @@ function countLetters (phrase) {
     var letters = phrase.split('');
 
     for (var char = 0; char < letters.length; char++){
-        var count = 1;
-        if (letters[char] !== ' '){
-            charsObj[letters[char]] = count++;
+        var character = letters[char];
+        if (character !== ' '){
+            if (charsObj[character]) {
+                charsObj[character]++;
+            } else {
+                charsObj[character] = 1;
+            }
         }
     }
     return charsObj;
-
-
-
 }
 
 console.log(countLetters("lighthouse in the house"));
