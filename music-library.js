@@ -30,7 +30,7 @@ var library = {
   // p02: Other Playlist - 1 tracks
 
 var printPlaylists = function () {
-    console.log('<-------PLAYLISTS------->');
+    console.log('   <-------PLAYLISTS------->');
 
     for (var playlist in library.playlists) {
         var playlistName = library.playlists[playlist].name;
@@ -48,7 +48,7 @@ printPlaylists();
   // t03: Four Thirty-Three by John Cage (Woodstock 1952)
 
 var printTracks = function () {
-    console.log('<--------TRACKS--------->');
+    console.log('   <--------TRACKS--------->');
 
     for (var track in library.tracks) {
         var trackID = library.tracks[track].id;
@@ -68,18 +68,28 @@ printTracks();
   // t02: Model View Controller by James Dempsey (WWDC 2003)
 
 var printPlaylist = function (playlistId) {
-    console.log('<----TRACKS for a PLAYLIST---->')
-    for (var playlist in library.playlists) {
-        var playlistName = library.playlists[playlist].name;
-        var numTracks = library.playlists[playlist].tracks.length;
+    console.log('   <----TRACKS for a PLAYLIST---->')
+    
+    var playlistName = library.playlists[playlistId].name;
+    var numTracks = library.playlists[playlistId].tracks.length;
+    
+    console.log(`${playlistId}: ${playlistName} - ${numTracks} tracks`);
 
-        console.log(`${playlist}: ${playlistName} - ${numTracks} tracks`);
+    var tracks = library.playlists[playlistId].tracks;
+    for (var i = 0; i < tracks.length; i++) {
+        var track = tracks[i];
+        var trackName = library.tracks[track].name;
+        var trackArtist = library.tracks[track].artist;
+        var trackAlbum = library.tracks[track].album;
+        console.log(`${track}: ${trackName} by ${trackArtist} (${trackAlbum})`);
     }
 }
-printPlaylist();
+printPlaylist('p01');
+printPlaylist('p02');
 
 
   // adds an existing track to an existing playlist
+  // ex: add 't03' to 'p01'
 var addTrackToPlaylist = function (trackId, playlistId) {
 
 }
@@ -92,9 +102,9 @@ var uid = function() {
     return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
 }
 
+
   // adds a track to the library
 var addTrack = function (name, artist, album) {
-
 }
 
 
