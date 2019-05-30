@@ -68,19 +68,16 @@ printTracks();
 
 var printPlaylist = function (playlistId) {
     console.log('   <----TRACKS for a PLAYLIST---->')
-    
     var playlistName = library.playlists[playlistId].name;
     var numTracks = library.playlists[playlistId].tracks.length;
-    
     console.log(`${playlistId}: ${playlistName} - ${numTracks} tracks`);
 
     var tracks = library.playlists[playlistId].tracks;
+
     for (var i = 0; i < tracks.length; i++) {
-        var track = tracks[i];
-        var trackName = library.tracks[track].name;
-        var trackArtist = library.tracks[track].artist;
-        var trackAlbum = library.tracks[track].album;
-        console.log(`${track}: ${trackName} by ${trackArtist} (${trackAlbum})`);
+        var trackS = tracks[i];
+        var track = library.tracks[trackS]
+        console.log(`${track}: ${track.name} by ${track.artist} (${track.album})`);
     }
 }
 printPlaylist('p01');
@@ -92,10 +89,12 @@ printPlaylist('p02');
 var addTrackToPlaylist = function (trackId, playlistId) {
     console.log('   <----ADDING TRACK TO PLAYLIST---->')
     library.playlists[playlistId].tracks.push(trackId)
+    //library.playlist.p01.tracks.push('t03')
+
 }
 addTrackToPlaylist('t03','p01');
-console.log(library.playlists.p01.tracks);
-
+//addTrackToPlaylist('t01', 'p03');
+console.log(library.playlists);
 
   // generates a unique id
   // (use this for addTrack and addPlaylist)
@@ -140,5 +139,7 @@ console.log(library.playlists)
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/search
 
 var printSearchResults = function(query) {
-
+    //create functions for finding name, then artist, then album. 
+    //then use conditionals to find all the cases
+    // make sure to print out 
 }

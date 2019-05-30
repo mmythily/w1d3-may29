@@ -39,10 +39,14 @@ var data = {
   }
 };
 
+//List everyone and for each of them, list the names of who they follow and who follows them
+var users = function (){
+  
+}
+
 /*
 Pick a few of the following tasks and write functions to solve them:
 
-List everyone and for each of them, list the names of who they follow and who follows them
 Identify who follows the most people
 Identify who has the most followers
 Identify who has the most followers over 30

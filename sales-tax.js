@@ -1,11 +1,6 @@
 /*
-Goal
-The goal of this exercise is to apply the concepts about JavaScript objects that you have learned today.
-
-This includes iterating over arrays and objects, as well as accessing and manipulating object data.
-
-Exercise
-Given the following data, implement a function that calculates the total sales and total tax, grouped by company.
+Iterating over arrays and objects, as well as accessing and manipulating object data.
+Implement a function that calculates the total sales and total tax, grouped by company.
 */
 
 var salesTaxRates = {
@@ -15,18 +10,15 @@ var salesTaxRates = {
 };
 
 var companySalesData = [
-  {
-    name: "Telus",
+  { name: "Telus",
     province: "BC",
     sales: [ 100, 200, 400 ]
   },
-  {
-    name: "Bombardier",
+  { name: "Bombardier",
     province: "AB",
     sales: [ 80, 20, 10, 100, 90, 500 ]
   },
-  {
-    name: "Telus",
+  { name: "Telus",
     province: "SK",
     sales: [ 500, 100 ]
   }
@@ -34,8 +26,22 @@ var companySalesData = [
 //Implement the function calculateSalesTax that returns the results below.
 
 function calculateSalesTax(salesData, taxRates) {
-  // Implement your code here
-}
+  var results = {};
+  for (var companyName in salesData) {
+    var totalSales = salesData[companyName].sales.reduce(sum)
+    if (results[companyName.name]) {
+      results[companyName.name].totalSales += totalSales;
+      results[companyName.name].totalTaxes += totalSales * taxRates[companyName.province];
+    }
+    else {
+      results[companyName.name] = {
+        totalSales: totalSales,
+        totalTaxes: taxRates[companyName.province]
+      }
+    }
+  }
+  return results;
+};
 
 var results = calculateSalesTax(companySalesData, salesTaxRates);
 
